@@ -35,6 +35,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: pwd
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker build -t $DOCKER_USER/myapp:$CIRCLE_SHA1 .
       - run: docker push $DOCKER_USER/myapp:$CIRCLE_SHA1
