@@ -26,6 +26,10 @@ jobs:
       - store_artifacts:
           path: build/libs
           destination: prefix
+      - persist_to_workspace:
+          root: build
+          paths:
+            - libs
       
         
 workflows: 
