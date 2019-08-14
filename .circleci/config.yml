@@ -18,14 +18,15 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
     steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: Build artifact
           command: gradle jar
       - store_artifacts:
           path: build/libs
           destination: prefix
-      - attach_workspace:
-          at: /tmp/workspace
+      
         
 workflows: 
   version: 2
