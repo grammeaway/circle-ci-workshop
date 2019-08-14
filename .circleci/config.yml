@@ -20,6 +20,8 @@ workflows:
             path: build/libs
             destination: prefix
     package:
+        requires:
+          - test
         docker:
           - image: circleci/openjdk:8-jdk
         steps:
