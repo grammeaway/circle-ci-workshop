@@ -10,3 +10,9 @@ jobs:
           command: gradle test
       - store_test_results:
           path: build/test-results
+      - run:
+          name: Build artifact
+          command: gradle jar
+      - store_artifacts:
+          path: /code/artifact
+          destination: prefix
